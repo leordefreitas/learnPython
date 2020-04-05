@@ -15,4 +15,8 @@ print(matriz)
 f = (lambda x, y, z: x+y+z)
 
 print(f(1, 1, 1))
-'''
+"""
+
+lista = [1, 2, 3]
+
+print(lista[0])
