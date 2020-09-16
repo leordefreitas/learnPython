@@ -59,17 +59,3 @@ while n > 0:
 print("%i:%i:%i" %(hours, minutes, seconds))
 
  """
-""" 
-a = int(input())
-b = int(input())
-c = int(input())
-
-if a >= b + c or b >= a + c or c >= a + b:
-  print("Nao pode ser um triangulo!!??!?!?!?!") 
-elif a == b == c:
-  print("Triangulo equilatero!!!")
-elif a == b or c == b or b == c:
-  print("Triangulo isoceles!!!")
-else:
-  print("Triangulo escaleno")
- """
