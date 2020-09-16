@@ -20,15 +20,6 @@ matrizAlt = []
 def main():
     geraMatriz()
     verificaJogada()
-    
-
-
-
-
-
-
-
-
 
 #Verifica se os números estã ordenados de forma que o jogador venceu.
 def verificaSeVenceu():
