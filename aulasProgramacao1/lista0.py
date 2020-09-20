@@ -163,7 +163,7 @@ while x <= number:
   if operator != 0:
     print(x)
   x += 1 """
-
+"""
 num1 = int(input(""))
 num2 = int(input(""))
 
@@ -189,3 +189,124 @@ elif num2 > num1:
 
 elif num1 == num2:
   print(0)
+"""
+
+# times = int(input(""))
+
+# if times != 0:
+#   result = input("").split(" ")
+
+"""
+done = []
+case = 1
+
+while case == 1:
+  times = int(input(""))
+
+  if times == 0:
+    break
+
+  result = input("").split(" ")
+
+  cont_mary = 0
+  cont_john = 0
+  for num in result:
+
+    if num == "0":
+      cont_mary += 1
+
+    elif num == "1":
+      cont_john += 1
+
+  done.append("Mary won %i times and John won %i times" %(cont_mary, cont_john))
+
+for frase in done:
+  print(frase)
+
+ """
+
+""" outlets = input("").split(" ")
+new_outlets = []
+
+for num in outlets:
+  new_outlets.append(int(num))
+
+count = 0
+sum_all = 0
+
+for num in new_outlets:
+  if count == 3:
+    sum_all += num
+  else:
+    sum_all += (num - 1)
+
+  count += 1
+
+print(sum_all) """
+
+"""
+i = input("").split(" ")
+
+new_i = []
+for n in i:
+  new_i.append(int(n))
+
+value = 0.0
+if new_i[0] == 1:
+  value = 4 * new_i[1]
+elif new_i[0] == 2:
+  value = 4.5 * new_i[1]
+elif new_i[0] == 3:
+  value = 5 * new_i[1]
+elif new_i[0] == 4:
+  value = 2 * new_i[1]
+elif new_i[0] == 5:
+  value = 1.5 * new_i[1]
+
+print("Total: R$ %.2f" %(value))
+"""
+
+i = input("").split(" ")
+
+new_i = []
+for n in i:
+  new_i.append(float(n))
+
+new_i[0] *= 2
+new_i[1] *= 3
+new_i[2] *= 4
+
+soma = 0
+for n in new_i:
+  soma += n
+
+media = soma / 10
+
+# 7 ou acima
+if media >= 7:
+  print("Media: %.1f" %(media))
+  print("Aluno aprovado.")
+
+# 5 ou abaixo
+if media < 5:
+  print("Media: %.1f" %(media))
+  print("Aluno reprovado.")
+
+# aluno exame
+if media >= 5 and media <= 6.9:
+  print("Media: %.1f" %(media))
+  print("Aluno em exame.")
+
+  nota_exame = float(input(""))
+  print("Nota do exame: %.1f" %(nota_exame))
+  
+  new_media = (nota_exame + media) / 2
+
+  if new_media >= 5:
+    print("Aluno aprovado.")
+  elif new_media < 5:
+    print("Aluno reprovado.")
+
+  print("Media final: %.1f" %(new_media))
+
+
