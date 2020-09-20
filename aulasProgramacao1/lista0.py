@@ -98,7 +98,7 @@ while n > 0:
 
 print("%i ano(s)\n%i mes(es)\n%i dia(s)" %(ano, meses, dias)) """
 
-salary = float(input(""))
+""" salary = float(input(""))
 percentual = 0
 earned = 0
 
@@ -123,4 +123,69 @@ percentual = int(percentual * 100)
 
 print("Novo salario: %.2f" %(new_salary))
 print("Reajuste ganho: %.2f" %(earned))
-print("Em percentual: %i %%" %(percentual))
+print("Em percentual: %i %%" %(percentual)) """
+
+""" number = int(input(""))
+
+if number == 61:
+  print("Brasilia")
+elif number == 71:
+  print("Salvador")
+elif number == 11:
+  print("Sao Paulo")
+elif number == 21:
+  print("Rio de Janeiro")
+elif number == 32:
+  print("Juiz de Fora")
+elif number == 19:
+  print("Campinas")
+elif number == 27:
+  print("Vitoria")
+elif number == 31:
+  print("Belo Horizonte")
+else:
+  print("DDD nao cadastrado")
+ """
+""" 
+x = 1
+while x <= 100:
+  operator = x % 2
+  if operator == 0:
+    print(x)
+  x += 1
+ """
+
+""" number = int(input("")) 
+
+x = 1
+while x <= number:
+  operator = x % 2
+  if operator != 0:
+    print(x)
+  x += 1 """
+
+num1 = int(input(""))
+num2 = int(input(""))
+
+if num1 > num2:
+  soma = 0 
+  num2 += 1
+  while num2 < num1:
+    operator = num2 % 2
+    if operator != 0:
+      soma += num2
+    num2 += 1
+  print(soma)
+
+elif num2 > num1:
+  soma = 0
+  num1 += 1
+  while num1 < num2:
+    operator = num1 % 2
+    if operator != 0:
+      soma += num1
+    num1 += 1
+  print(soma)
+
+elif num1 == num2:
+  print(0)
