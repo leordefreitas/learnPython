@@ -63,7 +63,7 @@ while contador < 10:
   if num <= 0:
     num = 1
   
-  print("X[%i] = %i" %(contador + 1, num))
+  print("X[%i] = %i" %(contador, num))
 
   contador += 1
 """
@@ -244,16 +244,13 @@ print("%i nota(s) de R$ 1,00" %(n1), end="\n")
 # exercicio, Array Selection I
 """
 count = 0
-array = []
 
 while count < 100:
   num = float(input())
-  array.append([num, count])
+  if num <= 10:
+    print("A[%.0f] = %.1f" %(count, num))
+  
   count += 1
-
-for k in array:
-  if k[0] <= 10:
-    print("A[%.0f] = %.1f" %(k[1], k[0]))
 """
   
 # exercicio, Game Time with Minutes
@@ -325,13 +322,9 @@ for i in mostrarNum:
 
 # exercicio, Fibonacci Array
 """
-def Fibonacci(n):
-    if n==0:
-        return 0
-    elif n==2 or n==1:
-        return 1
-    else:
-        return Fibonacci(n-1) + Fibonacci(n-2)
+def Fibonacci(num):
+  valor = ((((1 + (5**0.5)) / 2)**num - ((1 - (5**0.5)) / 2)**num)) / (5**0.5)
+  return valor
 
 vezes = int(input())
 count = 0
@@ -339,7 +332,9 @@ array = []
 
 while count < vezes:
   num = int(input())
-  print("Fib(%i) = %i" %(num, Fibonacci(num)))
+  if num >= 0 and num <= 60:
+    print("Fib(%i) = %i" %(num, Fibonacci(num)))
+
   count += 1
 """
 
@@ -395,7 +390,12 @@ for i in par:
 """
 vezes = int(input())
 
-numero = list(map(int, input().split(" ")))
+array = input().split(" ")
+numero = []
+
+for i in array:
+  numero.append(int(i)) 
+
 menorNumero = numero[0]
 
 for i in numero:
