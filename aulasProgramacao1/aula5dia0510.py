@@ -1,5 +1,5 @@
 # aula 5, dia 05/10
-
+"""
 #  EXEMPLO 1
 # subprogramas
 def escrever(valores):
@@ -86,3 +86,41 @@ def leAlunosComNotas(qtdAlunos, qtdNotas):
 
 resultados = leAlunosComNotas(5, 3)
 listaAprovadosReprovados(resultados, 6)
+
+# aula 5 dia 06/10
+# EXEMPLO 4
+
+def avalia(expressao):
+  valor = 0
+  if expressao != "":
+    partes = expressao.split("+")
+    for p in partes:
+      valor = valor + float(p)
+  return valor
+
+lida = input("Entre com uma expressao numerica valida: ")
+print("{"+lida"} =", avalia(lida.strip()))
+"""
+
+# EXEMPLO 5
+
+def preencher():
+  itens = []
+  nome = input("Nome do Produto: ")
+  while nome != "Fim":
+    qtd = int(input("Quantidade: "))
+    preco = float(input("Preco unitario: "))
+    itens.append((nome, qtd, preco))
+    nome = input("Nome do Produto: ")
+  return itens
+
+def processa(itens):
+  total = 0.0
+  for (nome, qtd, preco) in itens:
+    total += qtd * preco
+    print("Nome:", nome, "Quantidade:", qtd, "Preco:", preco)
+  print("Total Gasto:", total)
+  return None
+
+compras = preencher()
+processa(compras)
