@@ -115,3 +115,5 @@ inverter(linhasDaCarta)
 mostrar(linhasDaCarta)
 inverterCadaLinha(linhasDaCarta)
 mostrar(linhasDaCarta)
+
+#  chr() -> ser usado para comparar os simbolos, chr(20) == B
