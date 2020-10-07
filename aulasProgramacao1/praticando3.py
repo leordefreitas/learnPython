@@ -1,6 +1,6 @@
 # aula dia 07/10
-
-# Linhas com maior soma, colunas com maior
+"""
+# EXEMPLO 1, Linhas com maior soma, colunas com maior
 def mostrar(vals):
   print("Conteudo da Matriz:")
   for numeros in vals:
@@ -63,3 +63,55 @@ print(valores[linhaMaiorSoma], "=", somaDosValores)
 colunaMaiorSoma, somaDosValoresNaColuna = localizaColuna(valores)
 print("Coluna de Maior Soma:", colunaMaiorSoma)
 print("Soma Total na Coluna:", somaDosValoresNaColuna)
+"""
+
+# EXEMPLO 2, String
+# Ler carta, manter em uma linha. Mostrar Carta.
+# Perguntar que palavra deve ser substituida e seu novo conteudo
+# Mostrar novamente a carta apos a substituicao
+
+# Subs
+def ler():
+  linhas = []
+  linha = input()
+  while linha != "":
+    linhas.append(linha)
+    linha = input()
+  return linhas
+
+def mostrar(linhas):
+  print("Texto:")
+  for linhas in linhas:
+    print(linhas)
+  print()
+  return None
+
+def  substituirTodas(pAntiga, pNova, linhas): # usando replace e mais facil, tambem fazer por esse
+  for i in range(len(linhas)):                # exemplo para que fique mais facil
+    novaLinha = linhas[i].replace(pAntiga, pNova)
+    linhas[i] = novaLinha
+  return None
+
+def inverter(linhas):
+  for i in range(len(linhas)// 2):            # isso usar como molde para inverter, a ordem das linhas
+    linhas[i], linhas[len(linhas)-1-i] = linhas[len(linhas)-1-i], linhas[i]      
+  return None                   
+
+def inverterCadaLinha(linhas):
+  for i in range(len(linhas)):
+    linhaInvertida = ""
+    for letra in linhas[i]:
+      linhaInvertida = letra + linhaInvertida  # ela desse modo entra invertida somando
+    linhas[i] = linhaInvertida
+  return None
+
+# PP
+linhasDaCarta = ler()
+mostrar(linhasDaCarta)
+antiga, nova = input().split()
+substituirTodas(antiga, nova, linhasDaCarta)
+mostrar(linhasDaCarta)
+inverter(linhasDaCarta)
+mostrar(linhasDaCarta)
+inverterCadaLinha(linhasDaCarta)
+mostrar(linhasDaCarta)
