@@ -1,77 +1,103 @@
 # Sudoku
-"""
-vetor=[]
-teste = int(input())
-for a in range(teste) :
-    falso=False
-    matriz=[]
-    for i in range(9) :
-        matriz.append(list(map(int,input().split(" "))))
-    for linha in matriz :
-        for coluna in linha :
-            if linha.count(coluna)>1 : falso=True
-    for i in range(9) :
-        x=[]
-        for linha in matriz :
-            if not(linha[i] in x) : x.append(linha[i])
-        if len(x)!=9 :
-            falso=True
-    for linham in range(0,9,3) :
-        x1=[]
-        x2=[]
-        x3=[]
-        for linha in range(linham,linham+3) :
-            for colunam in range(0,9,3) :
-                for coluna in range(colunam,colunam+3) :
-                    if colunam==0 :
-                        if not(matriz[linha][coluna] in x1) : x1.append(matriz[linha][coluna])
-                    if colunam==3 :
-                        if not(matriz[linha][coluna] in x2) : x2.append(matriz[linha][coluna])
-                    if colunam==6 :
-                        if not(matriz[linha][coluna] in x3) : x3.append(matriz[linha][coluna])
-        if len(x2)!=9 : falso=True
-        if len(x3)!=9 : falso=True
-        if len(x1)!=9 : falso=True
-    vetor.append([])
-    vetor[-1].append("Instancia " + str(a+1))
-    if falso : vetor[-1].append("NAO")
-    else : vetor[-1].append("SIM")
-for i in vetor :
-    print(i[0])
-    print(i[1])
-    print()
-"""
+
+"""array = []
+num = int(input())
+
+for ind in range(num):
+    falso = False
+    casoSudoku = []
+    for i in range(9):
+        casoSudoku.append(list(map(int,input().split(" "))))
+
+    for linha in casoSudoku:
+
+        for coluna in linha:
+            if linha.count(coluna) > 1: 
+              falso = True
+    for i in range(9):
+        caso = []
+        for linha in casoSudoku:
+            if not(linha[i] in caso): 
+              caso.append(linha[i])
+
+        if len(caso) != 9:
+            falso = True
+    for linham in range(0,9,3):
+        caso1=[]
+        caso2=[]
+        caso3=[]
+        for linha in range(linham, linham + 3):
+            for colunam in range(0, 9, 3):
+                for coluna in range(colunam, colunam + 3):
+                    if colunam == 0:
+                        if not(casoSudoku[linha][coluna] in caso1): 
+                          caso1.append(casoSudoku[linha][coluna])
+                    if colunam == 3:
+                        if not(casoSudoku[linha][coluna] in caso2): 
+                          caso2.append(casoSudoku[linha][coluna])
+                    if colunam == 6:
+                        if not(casoSudoku[linha][coluna] in caso3): 
+                          caso3.append(casoSudoku[linha][coluna])
+        if len(caso2) != 9: 
+          falso = True
+        if len(caso3) != 9:
+           falso = True
+        if len(caso1) != 9: 
+          falso = True
+    array.append([])
+    array[-1].append("Instancia " + str(ind+1))
+    if falso: 
+      array[-1].append("NAO")
+    else: 
+      array[-1].append("SIM")
+for ind in array :
+    print(ind[0])
+    print(ind[1])
+    print()"""
+
 
 # Square Matrix III
-"""
-number = int(input())
-array1 = [0] * number
-array2 = [0] * number
 
-while number != 0:
- 
-  valorAlterando1 = 1
-  for x in range(len(array1)):
-    array2 = [0] * number
-    valorAlterando2 = 1
-    for y in range(len(array2)):
-      if y == 0:
-        array2[y] = valorAlterando1
-      else:
-        array2[y] = valorAlterando2
-      valorAlterando2 *= 2
-    valorAlterando1 *= 2
-    array1[x] = array2
-    
+n = 9999
 
-  print(array1)
-  print()
-  
+while True:
+    n = int(input())
 
-  number = int(input())
-  array1 = [0] * number
-  array2 = [0] * number
-"""
+    if n == 0:
+        break
+   
+    m = list()
+
+    #Matriz base com elementos "0"
+
+    for i in range(n):
+        m.append([])
+        for j in range(n):
+            m[i].append(0)
+
+    #Colocando os elementos pedidos
+
+    m[0][0] = 1
+    for i in range(0,n):
+        if i >=1:
+            m[i][0] = m[i - 1][0] * 2
+           
+        for j in range(1, n):
+            m[i][j] = m[i][j-1] * 2
+
+    #parte do print
+
+    T = len(str(m[n-1][n-1]))
+    for i in range(n):
+        for j in range(n):
+            m[i][j] = str(m[i][j])
+            while len(m[i][j]) < T:
+                m[i][j] = ' ' + m[i][j]
+        M = ' '.join(m[i])
+       
+        print(M)
+    print()
+
 
 # Matrix of Squares
 """
@@ -159,7 +185,7 @@ while contador < vezes:
 """
 
 # Black and White
-
+"""
 def trocar(vals, troca, trocado):
   novoArray = vals.copy()
   for i in range(len(novoArray)):
@@ -206,3 +232,49 @@ while sequencia != ["*", "*"]:
 
 for i in valores:
   print(i)
+"""
+
+# Encryption
+"""
+# sub
+def pulando3Casas(vals):
+  novoVals = []
+  for ind in range(len(vals)):
+    operador = 0
+    if ord(vals[ind]) <= 64 or ord(vals[ind]) >= 173 or vals[ind] == " ":
+      novoVals.append(vals[ind])
+    elif ord(vals[ind]) <= 96 and ord(vals[ind]) >= 91:
+      novoVals.append(vals[ind])
+    else:
+      operador = ord(vals[ind]) + 3
+      novoVals.append(chr(operador))
+  return novoVals
+def pulando1CasaMetade(vals):
+  novoCodigo = []
+  for ind in range(len(vals)):
+    if ind > int(len(vals) / 2) - 1:
+      if chr(35) == vals[ind] or ord(vals[ind]) >= 48 and ord(vals[ind]) <= 57 or vals[ind] == " ":
+        novoVals.append(vals[ind])
+      else:
+        operador = ord(vals[ind]) - 1
+        novoVals.append(chr(operador))
+    else:
+      novoVals.append(vals[ind])
+  return novoVals
+
+# PP
+vezes = int(input())
+contador = 0
+
+while contador < vezes:
+  mensagem = list(input())
+  codificando = pulando3Casas(mensagem)
+  codificando.reverse()
+  codificando1 = pulando1CasaMetade(codificando)
+  mostar = ""
+  for car in codificando1:
+    mostar += car
+  print(mostar)
+
+  contador += 1
+"""

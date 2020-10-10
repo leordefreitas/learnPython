@@ -82,3 +82,4 @@ preencher(numeros)
 print("Vetor lido:", numeros)
 ordena(numeros)
 print("Vetor Ordenado:", numeros)
+
