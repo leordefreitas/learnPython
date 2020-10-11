@@ -55,61 +55,107 @@ for ind in array :
     print(ind[1])
     print()"""
 
-
+"""
 # Square Matrix III
+# sub
+def criarArray(valor):
+  tabela = [0] * valor
 
-n = 9999
-
-while True:
-    n = int(input())
-
-    if n == 0:
-        break
-   
-    m = list()
-
-    #Matriz base com elementos "0"
-
-    for i in range(n):
-        m.append([])
-        for j in range(n):
-            m[i].append(0)
-
-    #Colocando os elementos pedidos
-
-    m[0][0] = 1
-    for i in range(0,n):
-        if i >=1:
-            m[i][0] = m[i - 1][0] * 2
-           
-        for j in range(1, n):
-            m[i][j] = m[i][j-1] * 2
-
-    #parte do print
-
-    T = len(str(m[n-1][n-1]))
-    for i in range(n):
-        for j in range(n):
-            m[i][j] = str(m[i][j])
-            while len(m[i][j]) < T:
-                m[i][j] = ' ' + m[i][j]
-        M = ' '.join(m[i])
-       
-        print(M)
+  for i1 in range(len(tabela)):
+    variandoTabela = [0] * valor
+    for i2 in range(len(variandoTabela)):
+      if i1 == 0 and i2 == 0:
+        variandoTabela[i2] = 1
+      elif i2 == 0:
+        variandoTabela[i2] = tabela[i1 - 1][1]
+      else:
+        variandoTabela[i2] = variandoTabela[i2 - 1] * 2
+    tabela[i1] = variandoTabela
+  return tabela
+def mostrar(valores):
+  # tabelaPronta = ""
+  # for lista in valores:
+  #   for ind in range(len(lista)):
+  #     if ind == (len(lista) - 1):
+  #       print("%d" %(lista[ind]), end="\n")
+  #     else:
+  #       print("%d" %(lista[ind]), end=" ")
+  # print(tabelaPronta)
+  size = len(str(valores[len(valores) - 1][len(valores) - 1])) + 1
+  for line in range(len(valores)):
+    for column in range(len(valores)):
+      if column == 0:
+        print(str(valores[line][column]).rjust(size-1), end="")
+      else:
+        print(str(valores[line][column]).rjust(size), end="")
     print()
+  return None
+
+# PP
+numero = int(input())
+arrayMostrar = []
+while numero != 0:
+  arrayMostrar.append(numero)
+  numero = int(input())
+for cada in arrayMostrar:
+  mostrar(criarArray(cada))
+  print()
+"""
 
 
 # Matrix of Squares
-"""
-qtdMatrizes = int(input())
-tamanhoMatriz = int(input())
-array = []
+# sub
+def quadradoMatriz(valores):
+  for linha in valores:
+    for ind in range(len(linha)):
+      linha[ind] *= linha[ind]
+  return None
+def mostrar(valores, numMostrar):
+  sizeValores = [0] * len(valores)
+  for lin in range(len(valores)):
+    for col in range(len(valores)):
+      if sizeValores[col] < valores[lin][col]:
+        sizeValores[col] = len(str(valores[lin][col]))
 
-for i in range(tamanhoMatriz):
-  num = input().split()
-  for i in num:
-    num[index(i)] = int(i)
-"""
+  # for linha in valores:
+  #   for coluna in linha:
+      # if coluna > maiorValor:
+      #   maiorValor = coluna
+  # size = len(str(maiorValor)) + 1
+  print("Quadrado da matriz #%i:" %(numMostrar))
+  for line in range(len(valores)):
+    for column in range(len(valores)):
+      if column == 0:
+        print(str(valores[line][column]).rjust(sizeValores[column]), end="")
+      else:
+        print(str(valores[line][column]).rjust(sizeValores[column] + 1), end="")
+    print()
+  return None
+
+# PP
+qtdMatrizesCalcular = int(input())
+tamanhoMatriz = int(input())
+contador2 = 0
+matrizMostrar = []
+while contador2 < qtdMatrizesCalcular:
+  matriz = []
+  contador1 = 0
+  while contador1 < tamanhoMatriz:
+    num = list(map(int, input().split()))
+    matriz.append(num)
+    contador1 += 1
+  quadradoMatriz(matriz)
+  matrizMostrar.append(matriz)
+  contador2 += 1
+  if contador2 < qtdMatrizesCalcular:
+    tamanhoMatriz = int(input())
+
+contador3 = 4
+for ind in range(len(matrizMostrar)):
+  mostrar(matrizMostrar[ind], contador3)
+  if ind != len(matrizMostrar) - 1:
+    print()
+  contador3 += 1
 
 # Canteen Queue FEITO
 """
