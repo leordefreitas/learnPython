@@ -122,11 +122,13 @@ def mostrar(valores, numMostrar):
       # if coluna > maiorValor:
       #   maiorValor = coluna
   # size = len(str(maiorValor)) + 1
-  print("Quadrado da matriz #%i:" %(numMostrar))
+  print("Quadrado da matriz #%i: " %(numMostrar))
   for line in range(len(valores)):
     for column in range(len(valores)):
       if column == 0:
         print(str(valores[line][column]).rjust(sizeValores[column]), end="")
+      elif line == 0 and column == (len(valores) - 1):
+        print(str(valores[line][column]).rjust(sizeValores[column] + 1), end=" ")
       else:
         print(str(valores[line][column]).rjust(sizeValores[column] + 1), end="")
     print()
