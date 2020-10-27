@@ -1,5 +1,5 @@
 # Q1
-# sub
+# SUBPROGRAMAS
 def qualMaior(vals):
   valMaior = vals[0]
   for val in vals:
@@ -52,7 +52,8 @@ def imprimeFinal(valMaiorTodos, valMenorTodos, valLinhas):
   print("O maior de todos os valores lidos é %i" %(valMaiorTodos))
   print("O total de linhas é %i" %(valLinhas))
   return None
-# pp
+
+# PROGRAMA PRINCIPAL
 valores = list(map(int, input().split()))
 qtdLinhas = 0
 ligado = True
