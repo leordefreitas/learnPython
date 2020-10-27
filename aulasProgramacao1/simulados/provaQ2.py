@@ -1,0 +1,38 @@
+# Q2
+# SUBPROGRAMA
+def produtoExiste(listaNaoExi, listaCod, listaPre, numPro, soma, qtd):
+  if numPro not in listaCod:
+    listaNaoExi.append(numPro)
+  else:
+    for index in range(len(listaCod)):
+      if listaCod[index] == numPro:
+        soma += listaPre[index] * qtd
+  return soma
+def imprimeFinal(valsNaoExistem, valGasto):
+  print("Os seguintes produtos não existem:")
+  for val in valsNaoExistem:
+    print("   %i" %(val))
+  print("O total gasto foi de R$ %.2f" %(valGasto))
+  return None
+# PROGRAMA PRINCIPAL
+qtdProdutos = int(input("Quantidade de produtos: "))
+contador = 0
+listaProdutosCodigo = []
+listaProdutosPreco = []
+
+while contador < qtdProdutos:
+  codigoProduto, precoProduto = map(int, input("Digite o código e o preco do produto separados por espaço: ").split())
+  listaProdutosCodigo.append(codigoProduto)
+  listaProdutosPreco.append(precoProduto)
+  contador += 1
+
+valorGasto = 0
+listaProdutosNaoExistem = []
+codProCompradoQtdComprado = list(map(int, input("Código do produto comprado e a quantidade, separados por espaço: ").split()))
+
+print()
+while codProCompradoQtdComprado != []:
+  valorGasto += produtoExiste(listaProdutosNaoExistem, listaProdutosCodigo, listaProdutosPreco, codProCompradoQtdComprado[0], valorGasto, codProCompradoQtdComprado[1])
+  codProCompradoQtdComprado = list(map(int, input("Código do produto comprado e a quantidade, separados por espaço: ").split()))
+
+imprimeFinal(listaProdutosNaoExistem, valorGasto)
