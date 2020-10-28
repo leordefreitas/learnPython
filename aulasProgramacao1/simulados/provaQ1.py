@@ -77,7 +77,7 @@ else:
     # condicao para determinar qual o maior e o menor valor
     if maiorTodos < maior:
       maiorTodos = maior
-    elif menorTodos > menor:
+    if menorTodos > menor:
       menorTodos = menor
     qtdLinhas += 1
 
