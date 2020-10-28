@@ -1,5 +1,5 @@
 # Q2
-# SUBPROGRAMA
+# SUBPROGRAMAS
 def produtoExiste(listaNaoExi, listaCod, listaPre, numPro, soma, qtd):
   if numPro not in listaCod:
     listaNaoExi.append(numPro)
