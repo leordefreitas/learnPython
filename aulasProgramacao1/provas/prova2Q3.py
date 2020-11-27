@@ -35,7 +35,7 @@ def substituindoPorZero(vals):
 def imprime(vals):
   for index in range(len(vals)):
     print("%4d" %(int(vals[index])), end=" ")
-    if index%10 == 0:
+    if index%10 == 0 and index != 0:
       print()
       
   return None
@@ -50,10 +50,10 @@ def primo(num):
 
 # Programa Principal
 
-nomeArquivo = input()
+nomeArquivo = input("Digite o nome do arquivo: ")
 valores = puxandoDoArquivo(nomeArquivo)
-print("----------TODOS OS NUMEROS------------")
+print("\n----------TODOS OS NUMEROS------------")
 imprime(valores)
 valoresSubstituidos = substituindoPorZero(valores)
-print("\n----------PRIMOS TROCADOS POR 0------------")
+print("\n\n----------PRIMOS TROCADOS POR 0------------")
 imprime(valoresSubstituidos)

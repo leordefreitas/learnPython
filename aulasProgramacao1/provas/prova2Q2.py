@@ -77,12 +77,12 @@ def listarProdutosCliente(nomeArquivo, vals):
 
 # Programa Principal
 
-nomeArquivo = input()
+nomeArquivo = input("Digite o nome do arquivo com os produtos: ")
 produtos = lerArquivo(nomeArquivo)
-print("------------TODOS OS PRODUTOS-------------------")
+print("\n------------TODOS OS PRODUTOS-------------------")
 imprime(produtos)
-print("------------PRODUTOS VENCENDO-------------------")
+print("\n------------PRODUTOS VENCENDO-------------------")
 listaVencidos = listarProdutosVencendo(produtos)
 imprime(listaVencidos)
-arquivoCliente = input()
+arquivoCliente = input("\nDigite o nome do arquivo do cliente: ")
 listaCliente = listarProdutosCliente(arquivoCliente, produtos)
