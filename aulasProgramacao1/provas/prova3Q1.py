@@ -1,4 +1,4 @@
-# Prova 3
+# Q1
 # num1#num2#num3#num4#num5#num6#cpfApostador#numAposta#loterica
 
 # Subprograma
@@ -79,7 +79,8 @@ def premiandoApostas(vals, totalApostas):
   if len(vals["6"]) > 0:
     resultado6 = (totalApostas * 0.7) / len(vals["6"])
     print("JOGOS QUE ACERTARAM 6 NÚMEROS!!!")
-    print(vals["6"])
+    for val in vals["6"]:
+      print(val)
     print("O valor recebido, por cada: R$ %.2f" %(resultado6))
     print()
     totalPremios += resultado6 * len(vals["6"])
@@ -92,7 +93,8 @@ def premiandoApostas(vals, totalApostas):
   if len(vals["5"]) > 0:
     resultado5 = (totalApostas * 0.2) / len(vals["5"])
     print("JOGOS QUE ACERTARAM 5 NÚMEROS!!!")
-    print(vals["5"])
+    for val in vals["5"]:
+      print(val)
     print("O valor recebido, por cada: R$ %.2f" %(resultado5))
     print()
     totalPremios += resultado5 * len(vals["5"])
@@ -102,7 +104,8 @@ def premiandoApostas(vals, totalApostas):
   if len(vals["4"]) > 0:
     resultado4 = (totalApostas * 0.05) / len(vals["4"])
     print("JOGOS QUE ACERTARAM 4 NÚMEROS!!!")
-    print(vals["4"])
+    for val in vals["4"]:
+      print(val)
     print("O valor recebido, por cada: R$ %.2f" %(resultado4))
     print()
     totalPremios += resultado4 * len(vals["4"])
@@ -112,7 +115,8 @@ def premiandoApostas(vals, totalApostas):
   if len(vals["3"]) > 0:
     resultado3 = (totalApostas * 0.03) / len(vals["3"])
     print("JOGOS QUE ACERTARAM 3 NÚMEROS!!!")
-    print(vals["3"])
+    for val in vals["3"]:
+      print(val)
     print("O valor recebido, por cada: R$ %.2f" %(resultado3))
     totalPremios += resultado3 * len(vals["3"])
   else:
@@ -120,7 +124,6 @@ def premiandoApostas(vals, totalApostas):
 
   print("\nO total pago em prêmios: R$ %.2f" %(totalPremios))
 
-  
 
   return None
 
